@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Plan - Fitness AI</title>
+</head>
+<body>
+    <header>
+        <h1>💪 Fitness AI</h1>
+        <p>Your Personal AI-Powered Fitness Coach</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trainer.html">Trainer Profile</a></li>
+            <li><a href="fitness.html">Fitness Plan</a></li>
+            <li><a href="nutrition.html"><strong>Nutrition</strong></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Nutrition Profile</h2>
+            <p>Complete this form to get your personalized AI-generated macro and diet plan</p>
+        </section>
+
+        <section>
+            <div id="nutritionSuccess" style="display: none; background-color: lightgreen; padding: 10px; margin-bottom: 20px; border-radius: 5px;">
+                ✓ Your nutrition profile has been saved! AI is calculating your macro plan...
+            </div>
+
+            <form id="nutritionForm">
+                <fieldset>
+                    <legend>Dietary Preferences</legend>
+                    
+                    <div>
+                        <label>Dietary Preference:</label>
+                        <div>
+                            <label>
+                                <input type="radio" name="dietaryPref" value="non-vegetarian" required> 🍗 Non-Vegetarian
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="dietaryPref" value="vegetarian" required> 🥗 Vegetarian
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="dietaryPref" value="vegan" required> 🌱 Vegan
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dietary Restrictions</legend>
+                    
+                    <div>
+                        <label for="allergies">Food Allergies / Restrictions:</label>
+                        <textarea id="allergies" name="allergies" placeholder="e.g., Peanuts, Dairy, Gluten, Soy..."></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Meal Planning</legend>
+                    
+                    <div>
+                        <label for="mealsPerDay">Preferred Meals Per Day:</label>
+                        <select id="mealsPerDay" name="mealsPerDay" required>
+                            <option value="">Select number of meals</option>
+                            <option value="3">3 Meals</option>
+                            <option value="4">4 Meals</option>
+                            <option value="5">5 Meals</option>
+                            <option value="6">6 Meals (Small, frequent)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="cuisinePreference">Favorite Cuisines:</label>
+                        <textarea id="cuisinePreference" name="cuisinePreference" placeholder="e.g., Mediterranean, Asian, Indian, Mexican, Italian..."></textarea>
+                    </div>
+
+                    <div>
+                        <label for="dislikedFoods">Foods You Dislike:</label>
+                        <textarea id="dislikedFoods" name="dislikedFoods" placeholder="e.g., Mushrooms, Seafood, Olives..."></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Lifestyle</legend>
+                    
+                    <div>
+                        <label for="workoutFrequency">Exercise Frequency:</label>
+                        <select id="workoutFrequency" name="workoutFrequency" required>
+                            <option value="">Select frequency</option>
+                            <option value="sedentary">Sedentary (Little exercise)</option>
+                            <option value="light">Light (1-3 days/week)</option>
+                            <option value="moderate">Moderate (3-5 days/week)</option>
+                            <option value="intense">Intense (5-7 days/week)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="goal">Primary Goal:</label>
+                        <select id="goal" name="goal" required>
+                            <option value="">Select your goal</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="muscle-gain">Muscle Gain</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="athletic">Athletic Performance</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Generate My Nutrition Plan</button>
+            </form>
+        </section>
+
+        <section id="nutritionOutput" style="display: none;">
+            <h2>🤖 Your AI-Generated Macro & Diet Plan</h2>
+
+            <article>
+                <h3>Daily Macro Breakdown</h3>
+                <table border="1">
+                    <tr>
+                        <th>Macro</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Protein</strong></td>
+                        <td id="proteinCalc">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Carbohydrates</strong></td>
+                        <td id="carbCalc">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fats</strong></td>
+                        <td id="fatCalc">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Calories</strong></td>
+                        <td id="calorieCalc">-</td>
+                    </tr>
+                </table>
+            </article>
+
+            <article>
+                <h3>Sample Meal Plan</h3>
+                <p><strong>Dietary Preference:</strong> <span id="dietPref">-</span></p>
+                <p><strong>Meals Per Day:</strong> <span id="meals">-</span></p>
+                <div id="mealPlan">
+                    <p>[Breakfast, Lunch, Dinner, and Snacks recommendations will appear here]</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Hydration & Supplements</h3>
+                <div id="supplementInfo">
+                    <p>[Hydration and supplement recommendations will appear here]</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Important Notes</h3>
+                <ul>
+                    <li>These are AI-generated suggestions based on your profile</li>
+                    <li>Drink plenty of water throughout the day</li>
+                    <li>Adjust portions based on your hunger and energy levels</li>
+                    <li>Consult with a registered dietitian for personalized advice</li>
+                    <li>Track your progress and adjust as needed</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Fitness AI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const nutritionForm = document.getElementById('nutritionForm');
+        const nutritionSuccess = document.getElementById('nutritionSuccess');
+        const nutritionOutput = document.getElementById('nutritionOutput');
+
+        nutritionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const dietaryPref = document.querySelector('input[name="dietaryPref"]:checked').value;
+            const mealsPerDay = document.getElementById('mealsPerDay').value;
+            const goal = document.getElementById('goal').value;
+            const workoutFrequency = document.getElementById('workoutFrequency').value;
+
+            nutritionSuccess.style.display = 'block';
+
+            // Calculate sample macros based on goal
+            let dailyCalories = 2200;
+            if (goal === 'weight-loss') {
+                dailyCalories = 1800;
+            } else if (goal === 'muscle-gain') {
+                dailyCalories = 2800;
+            }
+
+            const protein = Math.round(dailyCalories * 0.30 / 4);
+            const carbs = Math.round(dailyCalories * 0.40 / 4);
+            const fats = Math.round(dailyCalories * 0.30 / 9);
+
+            document.getElementById('proteinCalc').textContent = `${protein}g (${Math.round(protein * 4)} cal)`;
+            document.getElementById('carbCalc').textContent = `${carbs}g (${Math.round(carbs * 4)} cal)`;
+            document.getElementById('fatCalc').textContent = `${fats}g (${Math.round(fats * 9)} cal)`;
+            document.getElementById('calorieCalc').textContent = `${dailyCalories} calories`;
+
+            document.getElementById('dietPref').textContent = dietaryPref;
+            document.getElementById('meals').textContent = mealsPerDay;
+
+            document.getElementById('mealPlan').innerHTML = `
+                <h4>Sample ${mealsPerDay} Meal Schedule:</h4>
+                <ul>
+                    <li><strong>Breakfast:</strong> High-protein options matched to ${dietaryPref} diet</li>
+                    <li><strong>Mid-Morning Snack:</strong> Fruits, nuts, or protein shake</li>
+                    <li><strong>Lunch:</strong> Balanced meal with vegetables and protein</li>
+                    <li><strong>Afternoon Snack:</strong> Light options (yogurt, fruits)</li>
+                    <li><strong>Dinner:</strong> Light but nutritious meal before bed</li>
+                </ul>
+            `;
+
+            document.getElementById('supplementInfo').innerHTML = `
+                <h4>Recommendations:</h4>
+                <ul>
+                    <li>💧 Water Intake: 3-4 liters per day</li>
+                    <li>🥗 Multivitamin: Daily supplement</li>
+                    <li>💪 Protein Supplement: Post-workout (optional)</li>
+                    <li>🍌 Omega-3: Fish oil or flaxseed</li>
+                    <li>⚠️ Note: All recommendations are AI-generated. Consult a nutritionist for personalized advice.</li>
+                </ul>
+            `;
+
+            nutritionOutput.style.display = 'block';
+            nutritionOutput.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

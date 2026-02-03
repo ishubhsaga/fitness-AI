@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Coach — FitnessAI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="navbar-brand">
+        <span class="navbar-brand-dot"></span>
+        <span>FitnessAI</span>
+      </div>
+
+      <ul class="navbar-menu">
+        <li><a href="index.html#dashboard">Dashboard</a></li>
+        <li><a href="index.html#workouts">Workouts</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a class="text-primary" href="#">Trainer</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a class="btn btn-ghost" href="index.html">Home</a>
+        <a class="btn btn-primary" href="login.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Your AI Coach</h1>
+        <p class="section-subtitle">
+          Smart guidance that adapts to your progress and recovery.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="card feature-card">
+          <h3>Training Adjustments</h3>
+          <p>
+            Workout volume and intensity suggestions based on recent sessions.
+          </p>
+        </div>
+
+        <div class="card feature-card">
+          <h3>Recovery Awareness</h3>
+          <p>
+            Recommendations that help avoid burnout and overtraining.
+          </p>
+        </div>
+
+        <div class="card feature-card">
+          <h3>Nutrition Nudges</h3>
+          <p>
+            Small, actionable food suggestions aligned with your goals.
+          </p>
+        </div>
+
+        <div class="card feature-card">
+          <h3>Long-Term Progress</h3>
+          <p>
+            Guidance focused on sustainable improvement, not quick fixes.
+          </p>
+        </div>
+      </div>
+      <div class="section-header" style="margin-top: 3rem;">
+  <h2 class="section-title">Your Body & Training Goals</h2>
+  <p class="section-subtitle">
+    The AI coach uses this data to personalize your training plan.
+  </p>
+</div>
+
+<div class="card">
+  <form class="login-form">
+
+    <div class="form-group">
+      <label class="form-label">Height (cm)</label>
+      <input class="form-input" type="number" placeholder="e.g. 181">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Weight (kg)</label>
+      <input class="form-input" type="number" placeholder="e.g. 79">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Training Experience</label>
+      <select class="form-input">
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Primary Goal</label>
+      <select class="form-input">
+        <option>Fat Loss</option>
+        <option>Muscle Gain</option>
+        <option>Recomposition</option>
+        <option>General Fitness</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Workout Days Per Week</label>
+      <select class="form-input">
+        <option>3 days</option>
+        <option>4 days</option>
+        <option>5 days</option>
+        <option>6 days</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary btn-block" type="button">
+      Save Training Profile
+    </button>
+
+  </form>
+</div>
+
+
+      <div class="card ai-card">
+        <div class="ai-header">
+          <span class="ai-badge">Coach Insight</span>
+          <span class="ai-time text-muted">Today</span>
+        </div>
+        <p class="ai-text">
+          You’ve trained consistently this week. Consider a lighter session
+          tomorrow to maximize recovery and performance.
+        </p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

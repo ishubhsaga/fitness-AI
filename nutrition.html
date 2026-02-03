@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nutrition — FitnessAI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="navbar-brand">
+        <span class="navbar-brand-dot"></span>
+        <span>FitnessAI</span>
+      </div>
+
+      <ul class="navbar-menu">
+        <li><a href="index.html#dashboard">Dashboard</a></li>
+        <li><a href="index.html#workouts">Workouts</a></li>
+        <li><a class="text-primary" href="#">Nutrition</a></li>
+        <li><a href="coach.html">Trainer</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a class="btn btn-ghost" href="index.html">Home</a>
+        <a class="btn btn-primary" href="login.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="section">
+    <div class="container">
+        <div class="section-header" style="margin-top: 3rem;">
+  <h2 class="section-title">Your Nutrition Preferences</h2>
+  <p class="section-subtitle">
+    Help the AI create meal suggestions that fit your lifestyle.
+  </p>
+</div>
+
+<div class="card">
+  <form class="login-form">
+
+    <div class="form-group">
+      <label class="form-label">Diet Type</label>
+      <select class="form-input">
+        <option>Vegetarian</option>
+        <option>Non-Vegetarian</option>
+        <option>Vegan</option>
+        <option>Eggetarian</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Allergies (if any)</label>
+      <input class="form-input" type="text" placeholder="e.g. Lactose, peanuts">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Foods You Like</label>
+      <input class="form-input" type="text" placeholder="e.g. Paneer, rice, oats">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Foods You Avoid</label>
+      <input class="form-input" type="text" placeholder="e.g. Fried food, sugar">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Meals Per Day</label>
+      <select class="form-input">
+        <option>3 meals</option>
+        <option>4 meals</option>
+        <option>5 meals</option>
+        <option>Flexible</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary btn-block" type="button">
+      Save Nutrition Preferences
+    </button>
+
+  </form>
+</div>
+
+      <div class="section-header">
+        <h1 class="section-title">Nutrition Dashboard</h1>
+        <p class="section-subtitle">
+          Macro-aware insights to support training and recovery.
+        </p>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="card stat-card">
+          <div class="stat-label">Calories</div>
+          <div class="stat-value">2,450 kcal</div>
+          <div class="stat-note">Goal 2,200</div>
+        </div>
+
+        <div class="card stat-card">
+          <div class="stat-label">Protein</div>
+          <div class="stat-value">128 g</div>
+          <div class="stat-note">Target 150 g</div>
+        </div>
+
+        <div class="card stat-card">
+          <div class="stat-label">Carbs</div>
+          <div class="stat-value">260 g</div>
+          <div class="stat-note">Balanced</div>
+        </div>
+
+        <div class="card stat-card">
+          <div class="stat-label">Fats</div>
+          <div class="stat-value">70 g</div>
+          <div class="stat-note">Within range</div>
+        </div>
+      </div>
+
+      <div class="card ai-card">
+        <div class="ai-header">
+          <span class="ai-badge">AI Nutrition Tip</span>
+          <span class="ai-time text-muted">Today</span>
+        </div>
+        <p class="ai-text">
+          Protein intake is slightly low. Adding a high-protein snack post-workout
+          can improve muscle recovery.
+        </p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
